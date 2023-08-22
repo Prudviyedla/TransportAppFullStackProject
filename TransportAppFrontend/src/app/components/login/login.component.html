@@ -1,0 +1,31 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="container"><br/>
+          <h1 class="text-center">Login</h1>
+          <!-- Creating Form -->
+          <form (ngSubmit)="onSubmit()">
+            <mat-form-field class="full-width">
+              <mat-label>User Name</mat-label>
+              <input [(ngModel)]="credentials.userName" required name="userName" type="text" matInput />
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <mat-label>Password</mat-label>
+              <input [(ngModel)]="credentials.password" required name="password" [type]="hide ? 'password' : 'text'"
+                matInput />
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+            <div class="container text-center">
+              <button type="submit" mat-stroked-button color="primary">Login</button>
+              <button type="reset" style="margin-left: 10px;" mat-stroked-button color="accent">Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

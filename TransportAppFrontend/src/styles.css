@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.text-center{
+ text-align: center;
+}
+.full-width {
+ width: 100%;
+}
+
+.half-width {
+ margin: auto;
+ width: 50%;
+}
+
+.nav-element {
+ margin-left: 20px;
+}
+
+.example-card {
+ max-width: 400px;
+}
+
+.grid-container {
+ display: grid;
+ grid-template-columns: auto auto auto;
+ padding: 10px;
+}
+
+.grid-item {
+ padding: 20px;
+ text-align: center;
+}
+
+.small-size {
+ height: 15px;
+ width: 15px;
+ font-size: 15px;
+ margin: 0px;
+ padding: 4px;
+}

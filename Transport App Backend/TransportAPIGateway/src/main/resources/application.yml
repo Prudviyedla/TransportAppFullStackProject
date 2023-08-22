@@ -1,0 +1,48 @@
+server:
+  port: 9000
+  
+#API Gateway configuration for routings and load balancing
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
+   
+  instance:
+    hostname: localhost
+
+spring:
+  application:
+    name: api-gateway
+
+#API Gateway configuration for routings and load balancing
+  cloud:
+    gateway:
+      routes:
+      - id: user-service
+        uri: lb://user-service
+        predicates:
+        - Path=/api/v1/users/**
+        
+      - id: favorite-service
+        uri: lb://favorite-service
+        predicates:
+        - Path=/api/v1/favorites/**
+        
+      - id: direction-service
+        uri: lb://direction-service
+        predicates:
+        - Path=/api/v1/directions/**
+        
+      - id: places-service
+        uri: lb://places-service
+        predicates:
+        - Path=/api/v1/places/**
+          
+allowed:
+      origin:http://localhost:4200  
+
+
+  

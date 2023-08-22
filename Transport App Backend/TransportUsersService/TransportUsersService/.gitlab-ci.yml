@@ -1,0 +1,16 @@
+image: maven:latest
+
+stages:
+   - compile
+   - test
+
+app-compile:
+  stage: compile
+  script: echo 
+  tags:
+  - gitlab-wipro-stackroute-gitlab-runner-8d4d4c8f8-gkpz9
+app-test:
+  stage: test
+  script: echo
+  tags:
+  - gitlab-wipro-stackroute-gitlab-runner-8d4d4c8f8-gkpz9

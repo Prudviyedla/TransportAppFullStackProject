@@ -1,0 +1,41 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="container"><br />
+                    <h1 class="text-center">Edit Profile</h1>
+                    <!-- Creating Form -->
+                    <form (ngSubmit)="onSubmit()">
+                        <mat-form-field class="full-width">
+                            <mat-label>User Name</mat-label>
+                            <input [(ngModel)]="user.userName" required name="userName" type="text" matInput value={{user.userName}} />
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                            <mat-label>Password</mat-label>
+                            <input [(ngModel)]="user.password" required name="password" [type]="hide ? 'password' : 'text'" matInput value={{user.password}} />
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                            <mat-label>City</mat-label>
+                            <input [(ngModel)]="user.city" required name="city" type="text" matInput value={{user.city}} />
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                            <mat-label>E-Mail</mat-label>
+                            <input [(ngModel)]="user.email" required name="email" type="text" matInput value={{user.email}} />
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                            <mat-label>Phone Number</mat-label>
+                            <input [(ngModel)]="user.phoneNo" required name="phoneNo" type="text" matInput value={{user.phoneNo}} />
+                        </mat-form-field>
+                        <div class="container text-center">
+                            <button type="submit" mat-stroked-button color="primary">Save Changes</button>
+                            <button type="button" style="margin-left: 10px;" mat-stroked-button color="accent" routerLink="/user-profile">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

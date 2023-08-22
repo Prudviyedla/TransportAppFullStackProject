@@ -1,0 +1,17 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: favorite-service
+  data:
+    mongodb:
+      database: favoriteDB
+      port: 27017
+      host: localhost
+      
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true

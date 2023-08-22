@@ -1,0 +1,39 @@
+<div class="bootstrap-wrapper">
+ <div class="container mt text-center"><br/><br/>
+  <h1>User Profile</h1>  
+  <h2>{{user.userName}}</h2>
+  <table class="table table-striped" style="width: 35%; margin: auto;">
+   <tbody>
+    <tr>
+     <td>
+      <h4>City</h4>
+     </td>
+     <td>
+      {{user.city}}
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <h4>Email</h4>
+     </td>
+     <td>
+      {{user.email}}
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <h4>Phone No.</h4>
+     </td>
+     <td>
+      {{user.phoneNo}}
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <br/><br/><br/>
+  <div class="container" style="width:35%; display:flex; justify-content: space-between;">
+   <a routerLink="/edit-profile" mat-stroked-button color="accent" >Edit Profile&nbsp;<mat-icon class="small-size">edit</mat-icon></a>
+   <a mat-stroked-button (click)="deleteUser()" color="warn" >Delete Account&nbsp;<mat-icon class="small-size">delete</mat-icon></a>
+  </div>
+ </div>
+</div>

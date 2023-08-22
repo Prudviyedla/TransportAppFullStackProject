@@ -1,0 +1,24 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <h1 class="text-center" style="margin: 16px auto 16px;">Favorite Places</h1>
+        <p *ngIf="userFavorites.length === 0" class="text-center">You don't have any favorites</p>
+        <div class="grid-container">
+            <ng-container *ngFor="let place of allPlaces">
+                <div class="grid-item" *ngIf="isAFavorite(place.placeName)">
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                            <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                            <mat-card-title>{{place.placeName}}</mat-card-title>
+                            <mat-card-subtitle>{{place.city}}&nbsp;&nbsp;{{place.country}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src="../../../assets/{{place.image}}.jpg" alt="Photo of a Place" height="300">
+                        <mat-card-actions>
+                            <br>
+                            <button mat-stroked-button color="warn" class="text-center" (click)="removeFromFavorites(place.placeName)">Remove from favorites</button>
+                        </mat-card-actions><br>
+                    </mat-card>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

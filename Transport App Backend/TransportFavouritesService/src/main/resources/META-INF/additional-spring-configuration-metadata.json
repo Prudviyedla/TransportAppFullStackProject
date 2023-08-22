@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "eureka.client.service-url.default-zone",
+    "type": "java.lang.String",
+    "description": "A description for 'eureka.client.service-url.default-zone'"
+  },
+  {
+    "name": "eureka.client.service-url.fetch-registry",
+    "type": "java.lang.String",
+    "description": "A description for 'eureka.client.service-url.fetch-registry'"
+  },
+  {
+    "name": "eureka.client.service-url.register-with-eureka",
+    "type": "java.lang.String",
+    "description": "A description for 'eureka.client.service-url.register-with-eureka'"
+  }
+]}

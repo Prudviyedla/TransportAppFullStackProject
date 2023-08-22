@@ -1,0 +1,57 @@
+<div class="bootstrap-wrapper">
+    <div class="container" *ngIf="!searched">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="container"><br />
+                    <h1 class="text-center">Search Routes and Transport Modes</h1>
+                    <!-- Creating Form -->
+                    <form (ngSubmit)="onSubmit()">
+                        <mat-form-field class="full-width">
+                            <mat-label>Origin</mat-label>
+                            <input [(ngModel)]="route.origin" required name="origin" type="text" matInput />
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                            <mat-label>Destination</mat-label>
+                            <input [(ngModel)]="route.destination" required name="destination" type="text" matInput />
+                        </mat-form-field>
+                        <div class="container text-center">
+                            <button type="submit" mat-stroked-button color="primary">Search</button>
+                            <button type="reset" style="margin-left: 10px;" mat-stroked-button color="accent">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt text-center" *ngIf="searched"><br /><br />
+        <h1>Search Results</h1>
+        <p *ngIf="!isRouteAvail()">Aparently, no routes available..</p>
+        <table class="table table-striped" *ngIf="isRouteAvail()">
+            <thead>
+                <tr>
+                    <th>Origin</th>
+                    <th>Destination</th>
+                    <th>Distance</th>
+                    <th>Mode of Transport</th>
+                    <th>Time (in hours)</th>
+                    <th>Distance (in kilo meters)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let direction of reqDirections">
+                    <tr>
+                        <td>{{direction.origin}}</td>
+                        <td>{{direction.destination}}</td>
+                        <td>{{direction.distance}}</td>
+                        <td>{{direction.modeOfTransport}}</td>
+                        <td>{{direction.time}}</td>
+                        <td>{{direction.price}}</td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table><br/><br/>
+        <div>
+            <a mat-raised-button color="primary" (click)="unSearched()">Back</a>
+        </div>
+    </div>
+</div>

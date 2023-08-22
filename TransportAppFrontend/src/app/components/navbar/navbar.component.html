@@ -1,0 +1,14 @@
+<mat-toolbar color="primary" class="navbar">
+    <div class="container">
+        <span>
+   <a mat-flat-button color="primary" class="nav-element" routerLink="/" *ngIf="loggedIn==false" >GoTravels</a>
+   <a mat-flat-button color="primary" class="nav-element" routerLink="/dashboard" *ngIf="loggedIn">GoTravels</a>
+  </span>
+        <span class="example-spacer"></span>
+        <a mat-flat-button color="primary" class="nav-element" routerLink="/dashboard" *ngIf="loggedIn" style="margin-right: 20px;">Home</a>
+        <a mat-flat-button color="primary" class="nav-element" routerLink="/favorites" *ngIf="loggedIn" style="margin-right: 20px;">Favorite Places</a>
+        <a mat-flat-button color="primary" class="nav-element" routerLink="/station-statistics" *ngIf="loggedIn" style="margin-right: 20px;">Station Statistics</a>
+        <a mat-flat-button color="primary" class="nav-element" routerLink="/user-profile" *ngIf="loggedIn" style="margin-right: 20px;">Profile</a>
+        <a *ngIf="loggedIn" mat-flat-button color="warn" class="nav-element" (click)="logoutUser()">Logout</a>
+    </div>
+</mat-toolbar>
